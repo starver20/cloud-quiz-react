@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color: #262626;
+  --secondary-color: #545454;
+  --grey-light-color: #e5e5e5;
+  --active-color: #e4bc24;
+  --warning-color: #f4c900;
+
+  --error-color: #fe0000;
+
+  --background-color: #f1ece2;
+  --sub-text-color: rgb(117, 117, 117);
+
+  --header-1: 4rem;
+  --header-2: 3rem;
+  --header-3: 2rem;
+
+  --body-1: 1.8rem;
+  --body-2: 1.6rem;
+  --body-3: 1.4rem;
+  --body-4: 1.2rem;
+  --body-5: 1rem;
+  --body-6: 8px;
+  --body-7: 6px;
+
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 1.6rem;
+  --spacing-20: 2rem;
+  --spacing-24: 2.4rem;
+  --spacing-28: 2.8rem;
+  --spacing-32: 3.2rem;
+  --spacing-36: 3.6rem;
+  --spacing-40: 4rem;
+
+  --radius-1: 1.6rem;
+  --radius-2: 8px;
+  --radius-3: 2px;
+  --radius-full: 100%;
+
+  font-size: 62.5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--background-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-content {
+  min-height: calc(100vh - 50px);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  background-color: var(--primary-color);
+  font-size: var(--body-3);
+  font-weight: 500;
+  min-width: 10rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Common */
+.quiz-layout {
+  padding: 2rem;
+  width: 50%;
+}
+
+.quiz-layout > * {
+  margin-bottom: var(--spacing-20);
+}
+
+.quiz-layout h1 {
+  font-size: var(--header-2);
+  font-weight: 600;
+}
+
+.quiz-layout ul li {
+  font-size: var(--body-2);
+  list-style: none;
+  margin-bottom: var(--spacing-4);
+}
+
+@media (max-width: 500px) {
+  .quiz-layout {
+    width: 100%;
   }
 }

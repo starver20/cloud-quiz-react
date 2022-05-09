@@ -1,0 +1,20 @@
+.quiz-layout {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  margin: 5rem;
+  height: 320px;
+}
+
+.card a {
+  position: absolute;
+  bottom: 1rem;
+}
+
+@media (max-width: 660px) {
+  .quiz-layout {
+    flex-direction: column;
+  }
+}

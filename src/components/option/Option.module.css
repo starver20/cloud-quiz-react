@@ -1,0 +1,43 @@
+.list {
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: 400;
+  position: relative;
+}
+
+.list:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.key,
+.option-alpha {
+  padding: 4px;
+  border-radius: var(--radius-2) 0 0 var(--radius-2);
+}
+
+.key {
+  position: absolute;
+  background-color: var(--primary-color);
+  color: white;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.option-alpha {
+  border-radius: 0 var(--radius-2) var(--radius-2) 0;
+}
+
+.list:hover .key {
+  display: inline-block;
+}
+
+.list:hover .option-alpha {
+  background-color: var(--primary-color);
+  padding-left: 8px;
+}

@@ -1,0 +1,50 @@
+.options {
+  max-width: 60rem;
+}
+
+.list {
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.5s;
+  font-weight: 400;
+  position: relative;
+}
+
+.question {
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--body-3);
+  margin-top: 5rem;
+}
+
+.question-number {
+  margin-right: 1rem;
+}
+
+.question-text {
+  max-width: 75rem;
+  font-weight: 500;
+}
+
+.correct-option {
+  background-color: var(--primary-success-color-hover);
+  color: white;
+  border: 1px solid var(--primary-success-color-hover);
+}
+
+.wrong-option {
+  background-color: var(--primary-danger-color-hover);
+  color: white;
+  border: 1px solid var(--primary-danger-color-hover);
+}
+
+.quiz-result {
+  font-size: var(--header-3);
+  font-weight: 500;
+}
+.quiz-score {
+  font-size: var(--body-1);
+  font-weight: 500;
+}
