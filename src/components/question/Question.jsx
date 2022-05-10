@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './Question.module.css';
-import { Link } from 'react-router-dom';
 import Option from '../option/Option';
 
 const Question = () => {
