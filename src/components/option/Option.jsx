@@ -1,16 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classes from './Option.module.css';
+import { useResult } from '../../context/result/result-context';
 
-const Option = () => {
+const Option = ({ option: { option }, clickHandler, optionNo }) => {
+  const onOptionClick = () => {
+    clickHandler(option);
+  };
+
   return (
     <>
-      <Link to={'/result/asxa'}>
-        <li className={`${classes.list} stacked option`}>
-          <span className={classes.key}>Key </span>
-          <span className={classes['option-alpha']}>A.</span> Clippers
-        </li>
-      </Link>
+      <li onClick={onOptionClick} className={`${classes.list} stacked option`}>
+        <span className={classes.key}>Key </span>
+        <span className={classes['option-alpha']}>{optionNo + 1}.</span>{' '}
+        {option}
+      </li>
     </>
   );
 };

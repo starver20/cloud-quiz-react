@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Home.module.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
+import { quizData } from '../../data/quizData';
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
               </div>
             </div>
             <div className="footer">
-              <Link to={'rules/NBA All Stars'}>
+              <Link to={`rules/${quizData[1].category}`}>
                 <button className="btn">Play</button>
               </Link>
             </div>
@@ -50,7 +51,7 @@ const Home = () => {
               </div>
             </div>
             <div className="footer">
-              <Link to={'rules/Legends of cricket'}>
+              <Link to={`rules/${quizData[0].category}`}>
                 <button className="btn">Play</button>
               </Link>
             </div>
