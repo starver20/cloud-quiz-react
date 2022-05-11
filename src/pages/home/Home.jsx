@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Home.module.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
+import { quizData } from '../../data/quizData';
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
               <div className="content">
                 <img
                   className="img-text-over-media"
-                  src="https://picsum.photos/350/250"
+                  src="https://res.cloudinary.com/dq81bdilo/image/upload/v1652250838/istockphoto-177427917-612x612_yq5rfa.jpg"
                   alt=""
                 />
                 <div className="overlay-title">
@@ -27,7 +28,7 @@ const Home = () => {
               </div>
             </div>
             <div className="footer">
-              <Link to={'rules/NBA All Stars'}>
+              <Link to={`rules/${quizData[1].category}`}>
                 <button className="btn">Play</button>
               </Link>
             </div>
@@ -37,7 +38,7 @@ const Home = () => {
               <div className="content">
                 <img
                   className="img-text-over-media"
-                  src="https://picsum.photos/350/250"
+                  src="https://res.cloudinary.com/dq81bdilo/image/upload/v1652250847/ball-net-basketball-game-arena_oexanz.jpg"
                   alt=""
                 />
                 <div className="overlay-title">
@@ -50,7 +51,7 @@ const Home = () => {
               </div>
             </div>
             <div className="footer">
-              <Link to={'rules/Legends of cricket'}>
+              <Link to={`rules/${quizData[0].category}`}>
                 <button className="btn">Play</button>
               </Link>
             </div>

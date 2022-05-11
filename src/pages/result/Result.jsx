@@ -1,28 +1,49 @@
-import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import classes from './Result.module.css';
+import { useResult } from '../../context/result/result-context';
+import { useParams } from 'react-router-dom';
 
 const Result = () => {
+  const { result, total } = useResult();
+  const { category } = useParams();
+
   return (
     <div>
       <Navbar />
       <main className="main-content">
         <section className="quiz-layout">
-          <h1 className="quiz-header">NBA All Stars</h1>
+          <h1 className="quiz-header">{category}</h1>
           <h2 className={classes['quiz-result']}>Result</h2>
           <p className={classes['quiz-score']}>
-            Final Score: <span>10/25</span>
+            Final Score: <span>{total}/25</span>
           </p>
-          <div className={classes.question}>
-            <h3 className={classes['question-number']}>1.</h3>
+          {result.map((question, index) => (
+            <>
+              <div className={classes.question}>
+                <h3 className={classes['question-number']}>{index + 1}.</h3>
 
-            <h3 className={classes['question-text']}>
-              Nullam lobortis condimentum pellentesque. Suspendisse a eros mi.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada.
-            </h3>
-          </div>
-          <ul className={classes.options}>
+                <h3 className={classes['question-text']}>
+                  {question.question}
+                </h3>
+              </div>
+              <ul className={classes.options}>
+                {question.options.map(({ option }, index) => (
+                  <li
+                    className={`${classes.list} stacked option ${
+                      option === question.answer
+                        ? classes['correct-option']
+                        : question.selectedOptioin === option
+                        ? classes['wrong-option']
+                        : null
+                    }`}
+                  >
+                    <span className="option-alpha">{index + 1}.</span> {option}
+                  </li>
+                ))}
+              </ul>
+            </>
+          ))}
+          {/* <ul className={classes.options}>
             <li
               className={`${classes.list} stacked option ${classes['correct-option']}`}
             >
@@ -39,7 +60,7 @@ const Result = () => {
             <li className={`${classes.list} stacked option`}>
               <span className="option-alpha">D.</span> Celtics
             </li>
-          </ul>
+          </ul> */}
         </section>
       </main>
     </div>

@@ -5,7 +5,6 @@ import { useAuth } from '../../context/auth/auth-context';
 const RequiresAuth = ({ children }) => {
   const location = useLocation();
   const { user } = useAuth();
-  console.log(user);
   return user ? (
     children
   ) : (

@@ -12,7 +12,7 @@ import { collection, addDoc } from 'firebase/firestore';
 const AuthContext = createContext({
   login: async () => {},
   signup: async () => {},
-  logout: () => {},
+  logout: async () => {},
   user: {},
 });
 
@@ -55,8 +55,9 @@ const useProvideAuth = () => {
     }
   };
 
-  const logout = () => {
-    signOut(auth);
+  const logout = async () => {
+    await signOut(auth);
+    navigate('/');
   };
 
   return { login, signup, user, logout };
