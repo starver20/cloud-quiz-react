@@ -15,7 +15,7 @@ const Home = () => {
               <div className="content">
                 <img
                   className="img-text-over-media"
-                  src="https://picsum.photos/350/250"
+                  src="https://res.cloudinary.com/dq81bdilo/image/upload/v1652250838/istockphoto-177427917-612x612_yq5rfa.jpg"
                   alt=""
                 />
                 <div className="overlay-title">
@@ -38,7 +38,7 @@ const Home = () => {
               <div className="content">
                 <img
                   className="img-text-over-media"
-                  src="https://picsum.photos/350/250"
+                  src="https://res.cloudinary.com/dq81bdilo/image/upload/v1652250847/ball-net-basketball-game-arena_oexanz.jpg"
                   alt=""
                 />
                 <div className="overlay-title">

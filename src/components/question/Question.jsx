@@ -10,9 +10,10 @@ const Question = ({ question, options, answer, questionNo, onOptionClick }) => {
     resultDispatch({
       type: 'UPDATE_RESULT',
       payload: {
-        questionNumber: questionNo,
+        question,
+        options,
         selectedOptioin: option,
-        answer: answer,
+        answer,
       },
     });
     onOptionClick();

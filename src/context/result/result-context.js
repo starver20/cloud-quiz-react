@@ -15,13 +15,16 @@ const resultReducer = (state, action) => {
     }
 
     case 'UPDATE_RESULT': {
-      let { questionNumber, selectedOptioin, answer } = action.payload;
+      let { question, selectedOptioin, answer, options } = action.payload;
 
-      let newTotal = state.total + (selectedOptioin === answer ? 10 : 0);
+      let newTotal = state.total + (selectedOptioin === answer ? 5 : 0);
 
       return {
         ...state,
-        result: [...state.result, { questionNumber, selectedOptioin, answer }],
+        result: [
+          ...state.result,
+          { question, selectedOptioin, answer, options },
+        ],
         total: newTotal,
       };
     }
@@ -35,7 +38,8 @@ const ResultProvider = ({ children }) => {
   const [state, dispatch] = useReducer(resultReducer, { result: [] });
 
   const value = {
-    resultState: state,
+    result: state.result,
+    total: state.total,
     resultDispatch: dispatch,
   };
 
