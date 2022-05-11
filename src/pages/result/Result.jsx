@@ -2,19 +2,11 @@ import React, { useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import classes from './Result.module.css';
 import { useResult } from '../../context/result/result-context';
-import { quizData } from '../../data/quizData';
 import { useParams } from 'react-router-dom';
 
 const Result = () => {
   const { result, total } = useResult();
   const { category } = useParams();
-
-  const quiz = quizData.find((quiz) => quiz.category === category);
-  console.log(quiz);
-
-  useEffect(() => {
-    console.log(result);
-  });
 
   return (
     <div>

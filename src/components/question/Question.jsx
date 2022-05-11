@@ -2,11 +2,13 @@ import React from 'react';
 import classes from './Question.module.css';
 import Option from '../option/Option';
 import { useResult } from '../../context/result/result-context';
+import { useEventListener } from '../../hooks/useEventListener';
 
 const Question = ({ question, options, answer, questionNo, onOptionClick }) => {
   const { resultDispatch } = useResult();
 
   const optionClickHandler = (option) => {
+    console.log(option);
     resultDispatch({
       type: 'UPDATE_RESULT',
       payload: {
@@ -18,6 +20,24 @@ const Question = ({ question, options, answer, questionNo, onOptionClick }) => {
     });
     onOptionClick();
   };
+
+  const keyPressHander = (e) => {
+    let arr = [1, 2, 3, 4];
+    if (arr.includes(Number(e.key))) {
+      resultDispatch({
+        type: 'UPDATE_RESULT',
+        payload: {
+          question,
+          options,
+          selectedOptioin: options[e.key - 1].option,
+          answer,
+        },
+      });
+      onOptionClick();
+    }
+  };
+
+  useEventListener('keydown', keyPressHander);
 
   return (
     <div>
