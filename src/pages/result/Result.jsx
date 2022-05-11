@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import classes from './Result.module.css';
 import { useResult } from '../../context/result/result-context';

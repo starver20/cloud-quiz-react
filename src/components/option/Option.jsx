@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './Option.module.css';
-import { useResult } from '../../context/result/result-context';
 
 const Option = ({ option: { option }, clickHandler, optionNo }) => {
   const onOptionClick = () => {
