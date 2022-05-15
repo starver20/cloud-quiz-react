@@ -18,11 +18,11 @@ const Rules = () => {
             </li>
             <li>
               <span>🔹 </span>For every correct answer you will gain 5 points,
-              and lose 2 points for incorrect answer, and 0 if not attempted.
+              and 0 for incorrect.
             </li>
-            <li>
+            {/* <li>
               <span>🔹 </span>You have 10 seconds to choose an option.
-            </li>
+            </li> */}
           </ul>
           <div>
             <Link to={`/questions/${category}`}>
